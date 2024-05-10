@@ -24,22 +24,42 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
               <li>
-            <NavLink>Home</NavLink>
+            <NavLink to='/' className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] text-lg  "
+                : "text-lg"
+            }>Home</NavLink>
           </li>
           <li>
-            <NavLink>All Jobs</NavLink>
+            <NavLink to='/allJobs' className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] text-lg  "
+                : "text-lg"
+            }>All Jobs</NavLink>
           </li>
           <li>
-            <NavLink>Applied Jobs</NavLink>
+            <NavLink to='/appliedJobs' className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] text-lg  "
+                : "text-lg"
+            }>Applied Jobs</NavLink>
           </li>
           <li>
-            <NavLink>Add Jobs</NavLink>
+            <NavLink to='/addJob' className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] text-lg  "
+                : "text-lg"
+            }>Add Jobs</NavLink>
           </li>
           <li>
-            <NavLink>My Jobs</NavLink>
+            <NavLink to='/myJob' className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] text-lg  "
+                : "text-lg"
+            }>My Jobs</NavLink>
           </li>
           </ul>
         </div>
@@ -49,21 +69,41 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-6">
+        <ul className=" menu-horizontal px-1 gap-6">
           <li>
-            <NavLink>Home</NavLink>
+            <NavLink to="/"   className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] font-bold text-xl  "
+                : "font-bold text-xl"
+            }>Home</NavLink>
           </li>
           <li>
-            <NavLink>All Jobs</NavLink>
+            <NavLink to="/allJobs"   className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] font-bold text-xl  "
+                : "font-bold text-xl"
+            }>AllJobs</NavLink>
           </li>
           <li>
-            <NavLink>Applied Jobs</NavLink>
+            <NavLink to="/appliedJobs"   className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] font-bold text-xl  "
+                : "font-bold text-xl"
+            }>AppliedJobs</NavLink>
           </li>
           <li>
-            <NavLink>Add Jobs</NavLink>
+            <NavLink to="/addJob"   className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] font-bold text-xl  "
+                : "font-bold text-xl"
+            }>AddJobs</NavLink>
           </li>
           <li>
-            <NavLink>My Jobs</NavLink>
+            <NavLink to="/myJob"   className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] font-bold text-xl  "
+                : "font-bold text-xl"
+            }>MyJobs</NavLink>
           </li>
          
            

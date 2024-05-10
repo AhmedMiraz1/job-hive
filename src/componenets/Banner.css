@@ -1,0 +1,27 @@
+
+
+.slide {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-position:  center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slide1{
+    background-image:linear-gradient(180deg, #02041186 0%, rgba(7, 2, 17, 0.393) 100%), url("../assets/annie-spratt-TywjkDHf0Ps-unsplash.jpg");
+}
+
+.slide2{
+    background-image:linear-gradient(180deg, #07021179 0%, rgba(7, 2, 17, 0) 100%), url("../assets/jess-bailey-lJU5KvoHQHk-unsplash.jpg");
+}
+
+.slide3{
+    background-image:linear-gradient(180deg, #07021170 0%, rgba(7, 2, 17, 0) 100%), url("../assets/jo-szczepanska-9OKGEVJiTKk-unsplash.jpg");
+}
+
+.slide4{
+    background-image:linear-gradient(180deg, #07021178 0%, rgba(7, 2, 17, 0) 100%), url("../assets/swapnil-dwivedi-w46tRF64qNc-unsplash.jpg");
+}

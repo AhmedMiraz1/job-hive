@@ -9,7 +9,9 @@ const MainLayout = () => {
           <div className="container  mx-auto shadow-md bg-fixed rounded-b-md">
           <Navbar/>
           </div>
-            <Outlet/>
+           <div className=" container  mx-auto">
+           <Outlet/>
+           </div>
             <Footer/>
         </div>
     );
