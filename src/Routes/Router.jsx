@@ -5,6 +5,7 @@ import AllJobs from "../pages/AllJobs";
 import AppliedJobs from "../pages/AppliedJobs";
 import AddJob from "../pages/AddJob";
 import MyJob from "../pages/MyJob";
+import ErrorPage from "../pages/ErrorPage";
 
 
 
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout/>,
+      errorElement: <ErrorPage/>,
       children:[
         {
           path:'/',
