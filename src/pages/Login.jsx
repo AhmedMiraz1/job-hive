@@ -1,7 +1,33 @@
+import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+    const [success, setSuccess] = useState("");
+    const [logInError, setLogInError] = useState("");
+    const { singInUser } = useContext(AuthContext);
+
+    const handelLogin = event => {
+        event.preventDefault()
+        const form = event.target 
+        const email = form.email.value
+        const password = form.password.value 
+        singInUser(email, password)
+        .then(result => {
+            const user = result.user
+            setSuccess( 'LogIn successfully',toast("LogIn successfully"),user);
+            event.target.reset()
+            console.log(user);
+        })
+        .catch((error) => {
+            console.log(error);
+            setLogInError("Incorrect email password ", toast.error("Incorrect email password"), error.message);
+          })
+    }
+  
   return (
     <div className="w-full max-w-md p-4 rounded-md shadow-xl sm:p-8 bg-blue-600 text-gray-100 mx-auto mt-16">
       <h2 className="mb-3 text-3xl font-semibold text-center">
@@ -25,7 +51,7 @@ const Login = () => {
         <p className="px-3 text-gray-400">OR</p>
         <hr className="w-full text-gray-400" />
       </div>
-      <form noValidate="" action="" className="space-y-8">
+      <form onSubmit={handelLogin} className="space-y-8">
         <div className="space-y-4">
           <div className="space-y-2">
             <label htmlFor="email" className="block text-sm">
@@ -60,6 +86,16 @@ const Login = () => {
           value="Log In"
         />
       </form>
+      {logInError && (
+          <p className="text-red-500 text-center mb-6 font-medium text-xl">
+            {logInError}
+          </p>
+        )}
+        {success && (
+          <p className="text-green-500 text-center mb-6 font-medium text-xl">
+            {success}
+          </p>
+        )}
       <p className=" text-center text-gray-400 mt-8 font-bold text-xl ">
         Do not have account?
         <Link to='/register'
@@ -70,6 +106,7 @@ const Login = () => {
           Register here
         </Link>
       </p>
+      <ToastContainer />
     </div>
   );
 };

@@ -9,7 +9,7 @@ const MainLayout = () => {
           <div className="container  mx-auto shadow-md  bg-fixed rounded-b-md">
           <Navbar/>
           </div>
-           <div className=" container  mx-auto">
+           <div className=" container  mx-auto  min-h-[calc(100vh-337px)]">
            <Outlet/>
            </div>
             <Footer/>
