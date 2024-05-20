@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import bgImg from '../assets/gradient-dark-blue-futuristic-digital-background.jpg'
 
 const Login = () => {
     const [success, setSuccess] = useState("");
     const [logInError, setLogInError] = useState("");
-    const { singInUser } = useContext(AuthContext);
+    const { singInUser, googleLogin } = useContext(AuthContext);
 
     const handelLogin = event => {
         event.preventDefault()
@@ -27,9 +28,14 @@ const Login = () => {
             setLogInError("Incorrect email password ", toast.error("Incorrect email password"), error.message);
           })
     }
+
+    // const googleLogin =() => {
+
+    // }
   
   return (
-    <div className="w-full max-w-md p-4 rounded-md shadow-xl sm:p-8 bg-blue-600 text-gray-100 mx-auto mt-16">
+    <div style={{backgroundImage: `url(${bgImg})`}} className="py-2 md:py-6 my-12 rounded-md">
+        <div className="w-full max-w-md  p-4 rounded-md shadow-xl sm:p-8 bg-blue-600 text-gray-100 mx-auto mt-16" >
       <h2 className="mb-3 text-3xl font-semibold text-center">
         Login to your account
       </h2>
@@ -107,6 +113,7 @@ const Login = () => {
         </Link>
       </p>
       <ToastContainer />
+    </div>
     </div>
   );
 };
