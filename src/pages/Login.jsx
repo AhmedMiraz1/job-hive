@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,6 +10,7 @@ const Login = () => {
     const [success, setSuccess] = useState("");
     const [logInError, setLogInError] = useState("");
     const { singInUser, googleLogin } = useContext(AuthContext);
+    const navigate =useNavigate()
 
     const handelLogin = event => {
         event.preventDefault()
@@ -29,19 +30,28 @@ const Login = () => {
           })
     }
 
-    // const googleLogin =() => {
+    const handelGoogleLogin =async() => {
+        await googleLogin()
+        try{
+            toast.success('Log In successfully ')
+            navigate('/')
+        }
+        catch (err){
+            console.log(err);
+            toast.error('err.message')
+        } 
 
-    // }
+    }
   
   return (
     <div style={{backgroundImage: `url(${bgImg})`}} className="py-2 md:py-6 my-12 rounded-md">
-        <div className="w-full max-w-md  p-4 rounded-md shadow-xl sm:p-8 bg-blue-600 text-gray-100 mx-auto mt-16" >
+        <div className="w-full max-w-md  p-4 rounded-md shadow-2xl sm:p-8  text-gray-100 mx-auto mt-16" >
       <h2 className="mb-3 text-3xl font-semibold text-center">
         Login to your account
       </h2>
 
       <div className="my-6 space-y-4">
-        <button
+        <button onClick={handelGoogleLogin}
           aria-label="Login with Google"
           type="button"
           className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-violet-400 btn-outline bg-green-600 text-white font-bold text-xl gap-2"

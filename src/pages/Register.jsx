@@ -1,13 +1,16 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../provider/AuthProvider";
+import bgImg from '../assets/gradient-dark-blue-futuristic-digital-background.jpg'
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const [registerError, setRegisterError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const navigate = useNavigate()
 
   const handelRegister = (event) => {
     event.preventDefault();
@@ -48,9 +51,9 @@ const Register = () => {
       .then((result) => {
         //update profile
 
-        // updateUserProfile(name, photo).then(() => {
-        //   navigate("/");
-        // });
+        updateUserProfile(name, photo).then(() => {
+          navigate("/");
+        });
 
         const user = result.user;
         console.log(user);
@@ -70,7 +73,8 @@ const Register = () => {
       });
   };
   return (
-    <div className="w-full max-w-2xl p-4 rounded-md shadow-xl sm:p-8 bg-blue-600 text-gray-100 mx-auto mt-16">
+   <div style={{backgroundImage: `url(${bgImg})`}} className="py-2 md:py-6 my-12 rounded-md">
+     <div className="w-full max-w-2xl p-4 rounded-md shadow-2xl sm:p-8  text-gray-100 mx-auto mt-16">
       <h2 className="mb-3 text-3xl font-semibold text-center">
         Register your account
       </h2>
@@ -162,6 +166,7 @@ const Register = () => {
       </p>
       <ToastContainer />
     </div>
+   </div>
   );
 };
 

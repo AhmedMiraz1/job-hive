@@ -136,7 +136,7 @@ const Navbar = () => {
             user? <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar ">
                 <div className="w-10 rounded-full">
-                  <img src={user?.photoURL || "https://i.ibb.co/YfrC5vT/user-removebg-preview.png"} alt="Mehedi" />
+                  <img referrerPolicy='no-referrer' src={user?.photoURL || "https://i.ibb.co/YfrC5vT/user-removebg-preview.png"} alt="Mehedi" />
                  
 
                 </div>
