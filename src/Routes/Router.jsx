@@ -10,60 +10,47 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import JobDetails from "../pages/JobDetails";
 
-
-
-
-
-
-
-
-
-
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <MainLayout/>,
-      errorElement: <ErrorPage/>,
-      children:[
-        {
-          path:'/',
-          element: <Home/>,
-         
-        },
-        {
-          path:'/allJobs',
-          element: <AllJobs/>
-        },
-         {
-          path: '/appliedJobs',
-          element: <AppliedJobs/>
-        }, 
-        {
-          path: '/addJob',
-          element: <AddJob/>
-        },
-        {
-          path: '/myJob',
-          element: <MyJob/>
-        },
-        {
-          path:'/login',
-          element:<Login/>
-        }, 
-        {
-          path:'/register',
-          element:<Register/>
+  {
+    path: "/",
+    element: <MainLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/allJobs",
+        element: <AllJobs />,
+      },
+      {
+        path: "/appliedJobs",
+        element: <AppliedJobs />,
+      },
+      {
+        path: "/addJob",
+        element: <AddJob />,
+      },
+      {
+        path: "/myJob",
+        element: <MyJob />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/jobDetails/:_id",
+        element: <JobDetails />,
+        loader: ({params})=> fetch(`${import.meta.env.VITE_API_URL}/jobs/${params._id}`)
+      },
+    ],
+  },
+]);
 
-        },
-        {
-          path:'/jobDetails/:id',
-          element:<JobDetails/>
-        }
-      ]
-    },
-  ]);
-
-
-
-
-  export default router
+export default router;

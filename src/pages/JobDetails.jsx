@@ -1,26 +1,37 @@
+import { useLoaderData } from "react-router-dom";
+// import DatePicker from "react-datepicker";
+
+// import "react-datepicker/dist/react-datepicker.css";
+// import { useState } from "react";
 
 
 const JobDetails = () => {
+  // const [startDate, setStartDate] = useState(new Date());
+  
+
+  const job = useLoaderData()
+  console.log(job);
+  const {_id,name,  category, job_title, application_deadline, salary_range, job_applicants_number } =job || {}
     return (
         <div className='flex flex-col md:flex-row justify-around gap-5  items-center min-h-[calc(100vh-306px)] md:max-w-screen-xl mx-auto '>
         {/* Job Details */}
         <div className='flex-1  px-4 py-7 bg-white rounded-md shadow-md md:min-h-[350px]'>
           <div className='flex items-center justify-between'>
             <span className='text-sm font-light text-gray-800 '>
-              Deadline: 12/08/2024
+              Deadline: {application_deadline}
             </span>
             <span className='px-4 py-1 text-xs text-blue-800 uppercase bg-blue-200 rounded-full '>
-              Web Development
+              {category}
             </span>
           </div>
   
           <div>
             <h1 className='mt-2 text-3xl font-semibold text-gray-800 '>
-              Build Dynamic Website
+              {job_title}
             </h1>
   
             <p className='mt-2 text-lg text-gray-600 '>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit...
+              {salary_range}
             </p>
             <p className='mt-6 text-sm font-bold text-gray-600 '>
               Buyer Details:
@@ -42,12 +53,12 @@ const JobDetails = () => {
           </div>
         </div>
         {/* Place A Bid Form */}
-        <section className='p-6 w-full  bg-white rounded-md shadow-md flex-1 md:min-h-[350px]'>
+        {/* <section className='p-6 w-full  bg-white rounded-md shadow-md flex-1 md:min-h-[350px]'>
           <h2 className='text-lg font-semibold text-gray-700 capitalize '>
             Place A Bid
           </h2>
   
-          <form>
+          {/* <form>
             <div className='grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2'>
               <div>
                 <label className='text-gray-700 ' htmlFor='price'>
@@ -89,7 +100,7 @@ const JobDetails = () => {
                 <label className='text-gray-700'>Deadline</label>
   
                 {/* Date Picker Input Field */}
-              </div>
+              {/* </div>
             </div>
   
             <div className='flex justify-end mt-6'>
@@ -100,8 +111,8 @@ const JobDetails = () => {
                 Place Bid
               </button>
             </div>
-          </form>
-        </section>
+        //   </form> */} 
+        {/* </section> */} 
       </div>
     );
 };
