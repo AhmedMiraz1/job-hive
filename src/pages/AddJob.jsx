@@ -28,19 +28,19 @@ const AddJob = () => {
     const jobData = {
       Photo,
       job_title,
-      name,
-      email,
+      // name,
+      // email,
       deadline:application_deadline,
       category,
       salary_range,
       description,
       post_date,
       job_application:job_applicants_number,
-      // buyer: {
-      //   email,
-      //   name,
+      buyer: {
+        email,
+        name,
         
-      // },
+      },
     }
     try {
       const { data } = await axios.post(
