@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
-import { CgArrowBottomLeft } from "react-icons/cg";
 import { FaRectangleXmark } from "react-icons/fa6";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const SingleJobDetails = () => {
   const { user } = useContext(AuthContext);
@@ -10,11 +11,12 @@ const SingleJobDetails = () => {
   const [showModal, setShowModal] = useState(false);
   const job = useLoaderData();
   console.log(job);
-  const { _id, photo, job_title, salary_range,application_deadline, category, description, job_application, buyer_email } =
+  const { _id, Photo, job_title, salary_range,application_deadline, category, description, job_application, buyer } =
     job || {};
 
   const handelApply = async (e) => {
    e.preventDefault()
+   if(user?.email === buyer) return toast.error('Action not permitted')
     setShowModal(true);
     const form = e.target
     const jobId = _id
@@ -33,15 +35,23 @@ const SingleJobDetails = () => {
         application_deadline,
         salary_range,
         status,
-        buyer_email,
+        buyer,
         job_title
 
     }
-    console.log(jobData);
+   try{
+    const {data} =await axios.post(`${import.meta.env.VITE_API_URL}/jobData`, jobData)
+    console.log(data);
+   }
+   catch(err){
+  console.log(err);
+   }
   };
   return (
-    <div className="my-14 overflow-hidden bg-white rounded-lg shadow-md ">
-      <img className=" w-full min-h-[40vh]" src={photo} alt="photo" />
+    <div className="my-14 overflow-hidden bg-white rounded-lg shadow-md  ">
+     <div >
+     <img className=" w-full h-full rounded-xl" src={Photo} alt="photo" />
+     </div>
 
       <div className="p-6">
         <div>

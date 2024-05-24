@@ -28,8 +28,6 @@ const AddJob = () => {
     const jobData = {
       Photo,
       job_title,
-      // name,
-      // email,
       deadline:application_deadline,
       category,
       salary_range,
@@ -39,6 +37,7 @@ const AddJob = () => {
       buyer: {
         email,
         name,
+        photoURL:user?.photoURL
         
       },
     }
@@ -70,6 +69,7 @@ const AddJob = () => {
               <input
                 name="Photo"
                 type="text"
+                required
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
               />
             </div>
@@ -81,6 +81,7 @@ const AddJob = () => {
               <input
                 type="text"
                 name="job_title"
+                required
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
               />
             </div>
@@ -91,6 +92,7 @@ const AddJob = () => {
               <input
                 name="name"
                 type="text"
+                required
                 defaultValue={user?.displayName}
                 disabled
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
@@ -122,12 +124,13 @@ const AddJob = () => {
               <select
                 name="category"
                 id="category"
+                required
                 className="border p-2 rounded-md"
               >
-                <option value="Web Development">On site</option>
-                <option value="Graphics Design">Remote</option>
-                <option value="Digital Marketing">Hybrid </option>
-                <option value="Digital Marketing">Part time</option>
+                <option value="On site">On site</option>
+                <option value="Remote">Remote</option>
+                <option value="Hybrid">Hybrid </option>
+                <option value="Part time">Part time</option>
               </select>
             </div>
             <div>
@@ -137,6 +140,7 @@ const AddJob = () => {
               <input
                 name="salary_range"
                 type="number"
+                required
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
               />
             </div>
@@ -148,6 +152,7 @@ const AddJob = () => {
               <textarea
                 className="block w-full px-8 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
                 name="description"
+                required
                 id=""
               ></textarea>
             </div>
@@ -159,6 +164,7 @@ const AddJob = () => {
             <input
               className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
               type="date"
+              required
               name="post_date"
               id=""
             />
@@ -171,6 +177,7 @@ const AddJob = () => {
             <input
               className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
               type="number"
+              required
               name="job_applicants_number"
               defaultValue={0}
               id=""

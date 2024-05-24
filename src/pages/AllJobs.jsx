@@ -13,6 +13,8 @@ const AllJobs = () => {
       getData()
     },[] )
     console.log(jobs);
+
+    
     return (
         <section className='container px-4 mx-auto pt-12'>
       <div className='flex items-center gap-x-3'>
@@ -75,7 +77,7 @@ const AllJobs = () => {
                 jobs?.map(job=>  <tbody key={job._id} className='bg-white divide-y divide-gray-200 '>
                 <tr>
                   <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
-                    {job.job_title}
+                    {job?.job_title}
                   </td>
 
                   <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
