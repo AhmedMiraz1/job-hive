@@ -9,6 +9,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import JobDetails from "../pages/JobDetails";
+import SingleJobDetails from "../pages/SingleJobDetails";
 
 const router = createBrowserRouter([
   {
@@ -21,8 +22,20 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/jobDetails/:_id",
+        element: <JobDetails />,
+        loader: ({params})=> fetch(`${import.meta.env.VITE_API_URL}/jobs/${params._id}`)
+      },
+      {
         path: "/allJobs",
         element: <AllJobs />,
+        
+        
+      },
+      {
+        path:'/job/:_id',
+        element:<SingleJobDetails/>,
+        loader: ({params})=> fetch(`${import.meta.env.VITE_API_URL}/jobs/${params._id}`)
       },
       {
         path: "/appliedJobs",
@@ -44,11 +57,7 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
-      {
-        path: "/jobDetails/:_id",
-        element: <JobDetails />,
-        loader: ({params})=> fetch(`${import.meta.env.VITE_API_URL}/jobs/${params._id}`)
-      },
+      
     ],
   },
 ]);
