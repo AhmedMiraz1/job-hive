@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaRectangleXmark } from "react-icons/fa6";
 import axios from "axios";
@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 
 const SingleJobDetails = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate()
 
   const [showModal, setShowModal] = useState(false);
   const job = useLoaderData();
@@ -36,12 +37,16 @@ const SingleJobDetails = () => {
         salary_range,
         status,
         buyer_email: buyer?.email,
-        job_title
+        job_title,
+        description
 
     }
    try{
-    const {data} =await axios.post(`${import.meta.env.VITE_API_URL}/jobData`, jobData)
+    const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/jobData`, jobData)
     console.log(data);
+    toast.success('job applied successfully')
+    navigate('/appliedJobs')
+    
    }
    catch(err){
   console.log(err);

@@ -6,17 +6,16 @@ import { Link } from "react-router-dom";
 
 const MyJob = () => {
   const [jobs, setJobs] = useState([]);
+  
   useEffect(() => {
     getData();
   }, []);
   const getData = async () => {
-    const { data } = await axios(`${import.meta.env.VITE_API_URL}/jobs`);
+    const { data } = await axios(`${import.meta.env.VITE_API_URL}/jobs`, {withCredentials:true});
     setJobs(data);
   };
 
   const handelDelete=async (id)=> {
-    
-
     try {
       const { data } = await axios.delete(
         `${import.meta.env.VITE_API_URL}/job/${id}`
