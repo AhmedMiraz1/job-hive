@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 
 const JobCard = ({job}) => {
 
-  const {_id,name,  post_date, job_title, deadline, salary_range, job_application } =job || {}
+  const {_id,buyer,  post_date, job_title, deadline, salary_range, job_application, category } =job || {}
     
     return (
         <div className='w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md hover:scale-[1.05] transition-all'>
       <div className='flex items-center justify-between'>
-        <span className='text-xs font-light text-gray-800 '>
-         {name}
+        <span className='text-lg font-light text-gray-800 '>
+         {buyer?.name}
         </span>
-        <span className='px-3 py-1 text-xl   '>
-          {new Date(deadline).toLocaleDateString()}
+        <span className='px-3 py-1 text-lg   '>
+         Deadline :  {new Date(deadline).toLocaleDateString()}
         </span>
       </div>
 
@@ -21,15 +21,18 @@ const JobCard = ({job}) => {
          {job_title}
         </h1>
 
+        <div className="flex justify-between items-center">
         <p className='mt-2 text-sm text-gray-600 '>
          {post_date}
         </p>
+        <p className="px-4 py-1 text-xs text-blue-800 uppercase bg-blue-200 rounded-full">{category}</p>
+        </div>
        <div className="flex items-center justify-between gap-8 mt-5 ">
        <p className='mt-2 text-sm font-bold text-gray-600 '>
-        {salary_range}
+        Salary : {salary_range}
         </p>
         <p className='mt-2 text-sm font-bold text-gray-600 '>
-        {job_application}
+        Application Number : {job_application}
         </p>
         
        </div>

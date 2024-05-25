@@ -11,7 +11,7 @@ const SingleJobDetails = () => {
   const [showModal, setShowModal] = useState(false);
   const job = useLoaderData();
   console.log(job);
-  const { _id, Photo, job_title, salary_range,application_deadline, category, description, job_application, buyer } =
+  const { _id, Photo, job_title, salary_range,deadline, category, description, job_application, buyer } =
     job || {};
 
   const handelApply = async (e) => {
@@ -32,10 +32,10 @@ const SingleJobDetails = () => {
         name, 
         email,
         category,
-        application_deadline,
+        deadline,
         salary_range,
         status,
-        buyer,
+        buyer_email: buyer?.email,
         job_title
 
     }
@@ -55,12 +55,12 @@ const SingleJobDetails = () => {
 
       <div className="p-6">
         <div>
-          <h1 className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
+          <h1 className="text-xs font-medium text-blue-600 ">
             {job_title}
           </h1>
 
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-600">
-            {description}
+            Job description : {description}
           </p>
         </div>
 
