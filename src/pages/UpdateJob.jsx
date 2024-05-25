@@ -7,12 +7,13 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const UpdateJob = () => {
-  const [startDate, setStartDate] = useState(new Date());
   const navigate = useNavigate();
   const job = useLoaderData()
-  const{  Photo,job_title,deadline,category,salary_range,description,post_date,job_application, buyer  }= job
+  const{ _id, Photo,job_title,deadline,category,salary_range,description,post_date,job_application,  }= job
 
   const { user } = useContext(AuthContext);
+  const [startDate, setStartDate] = useState(new Date(deadline) || new Date())
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -43,7 +44,7 @@ const UpdateJob = () => {
     };
     try {
       const { data } = await axios.put(
-        `${import.meta.env.VITE_API_URL}/jobs`,
+        `${import.meta.env.VITE_API_URL}/job/${_id}`,
         jobData
       );
       console.log(data);
