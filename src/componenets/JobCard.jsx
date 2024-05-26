@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 
 const JobCard = ({job}) => {
@@ -43,3 +44,7 @@ const JobCard = ({job}) => {
 };
 
 export default JobCard;
+
+JobCard.propTypes ={
+  job:PropTypes.object
+}

@@ -18,24 +18,25 @@ const Footer = () => {
              JobHive
             </span>
           </a>
+          <p className='text-lg text-white mt-4'>Analyze and interpret data to support <br /> business decisions using SQL <br /> and data visualization tools.</p>
         </div>
         <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase text-gray-50">Product</h3>
+            <h3 className="tracking-wide uppercase text-gray-50">Home</h3>
             <ul className="space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
-                  Features
+                  All Job 
                 </a>
               </li>
               <li>
                 <a rel="noopener noreferrer" href="#">
-                  Integrations
+                  My Job
                 </a>
               </li>
               <li>
                 <a rel="noopener noreferrer" href="#">
-                  Pricing
+                  Applied Job
                 </a>
               </li>
               <li>
@@ -46,11 +47,11 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase text-gray-50">Company</h3>
+            <h3 className="tracking-wide uppercase text-gray-50">Contact</h3>
             <ul className="space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
-                  Privacy
+                  +1-800-222-1222
                 </a>
               </li>
               <li>
@@ -61,21 +62,23 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="uppercase text-gray-50">Developers</h3>
+            <h3 className="uppercase text-gray-50">Address</h3>
             <ul className="space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
-                  Public API
+                John Doe
+
                 </a>
               </li>
               <li>
                 <a rel="noopener noreferrer" href="#">
-                  Documentation
+                123 Main Street
+
                 </a>
               </li>
               <li>
                 <a rel="noopener noreferrer" href="#">
-                  Guides
+                Springfield, IL 62701
                 </a>
               </li>
             </ul>

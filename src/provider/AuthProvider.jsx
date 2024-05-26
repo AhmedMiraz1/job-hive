@@ -2,6 +2,7 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStat
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 import axios from "axios";
+import PropTypes from 'prop-types';
 
 
 
@@ -83,3 +84,8 @@ const AuthProvider = ({children}) => {
 };
 
 export default AuthProvider;
+
+
+AuthProvider.propTypes={
+  children:PropTypes.node
+}
