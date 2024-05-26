@@ -12,7 +12,7 @@ const AllJobs = () => {
       }
       getData()
     },[] )
-    console.log(jobs);
+   
 
     
     return (

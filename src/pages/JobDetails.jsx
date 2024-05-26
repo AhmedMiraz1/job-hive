@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 
 const JobDetails = () => {
   const job = useLoaderData();
-  console.log(job);
+ 
   const { buyer, category, job_title, deadline, salary_range, description } =
     job || {};
   return (

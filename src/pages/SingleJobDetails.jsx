@@ -26,7 +26,7 @@ const SingleJobDetails = () => {
     const email = user?.email 
     // const buyer_email = buyer_email
     const status = 'pending'
-    console.log(name, email);
+    // console.log(name, email);
 
 
     const jobData = {

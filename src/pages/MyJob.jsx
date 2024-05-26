@@ -26,7 +26,7 @@ const MyJob = () => {
       //refresh ui
       getData()
     } catch (err) {
-      console.log(err.message)
+  
       toast.error(err.message)
     }
 
