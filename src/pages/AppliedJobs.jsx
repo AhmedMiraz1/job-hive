@@ -30,7 +30,7 @@ const AppliedJobs = () => {
       if(isLoading) return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-600"></div>
     return (
         <div className="mt-12">
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-8">
             <select
               onChange={e => {
                 setFilter(e.target.value)
@@ -48,11 +48,11 @@ const AppliedJobs = () => {
               <option value='Part time'>Part time</option>
             </select>
           </div>
-          <span className="mt-6 bg-green-900 text-white p-2 rounded-md">Apply Job :- {applyJobs.length}</span>
+          <span className="mt-8 bg-green-900 text-white p-2 rounded-md">Apply Job :- {applyJobs.length}</span>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-20 ">
 
             {
-                applyJobs?.map(job => <div key={job._id} className='w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md hover:scale-[1.05] transition-all'>
+                applyJobs?.map(job => <div key={job._id} className='w-full mx-4 px-4 py-3 bg-white rounded-md shadow-md hover:scale-[1.05] transition-all'>
                 <div className='flex items-center justify-between'>
                   <span className='text-lg font-light text-gray-800 '>
                   Deadline : {new Date(job?.deadline).toLocaleDateString()}

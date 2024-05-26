@@ -2,8 +2,8 @@ import image from "../assets/image.jpg";
 
 const JobDescribe = () => {
   return (
-    <div className="my-16 flex justify-between flex-col-reverse md:flex-row gap-6">
-      <div className="w-[50%] text-center space-y-5 shadow-lg ">
+    <div className="my-16 flex justify-between flex-col-reverse lg:flex-row gap-6">
+      <div className=" w-full lg:w-[50%] text-center space-y-5 shadow-lg ">
         <h1 className="text-xl md:text-2xl lg:text-3xl text-purple-500 font-bold">Features you will love & enjoy</h1>
         <p className="text-base font text-gray-400">
           Find your dream job effortlessly with personalized matches, real-time
@@ -26,7 +26,7 @@ const JobDescribe = () => {
             <p className="text-gray-600 mt-3">Explore flexible part-time job opportunities tailored to your schedule and preferences. Whether you are a student, parent, or simply seeking supplemental income..</p>
         </div>
       </div>
-      <div className="w-[50%] p-4 shadow-md ">
+      <div className="w-full lg:w-[50%] p-4 shadow-md ">
         <img className="min-h-[70vh]" src={image} alt="" />
       </div>
     </div>

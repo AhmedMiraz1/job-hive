@@ -54,14 +54,14 @@ const AddJob = () => {
     }
   }
   return (
-    <div className="flex justify-center items-center min-h-[calc(100vh-306px)] my-12">
-      <section className=" p-2 md:p-6 mx-auto bg-white rounded-md shadow-md ">
+    <div className="flex justify-center items-center  my-12 ">
+      <section className=" p-2 md:p-6 mx-auto bg-white rounded-md shadow-md w-full md:w-[80%] lg:w-[60%] ">
         <h2 className="text-lg font-semibold text-gray-700 capitalize text-center ">
           Add jobs
         </h2>
 
         <form onSubmit={handleFormSubmit}>
-          <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 mt-4 md:grid-cols-2">
             <div>
               <label className="text-gray-700 " htmlFor="job_title">
                 Photo URL

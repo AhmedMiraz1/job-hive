@@ -18,8 +18,8 @@ const JobCategory = () => {
     <Tabs>
       <div className="container mx-auto px-4 py-12">
         <h1 className="text-center font-extrabold text-xl md:text-3xl lg:text-4xl  mb-6 text-purple-500">Job Category</h1>
-        <p className="text-lg md:text-xl font-medium text-purple-400 mb-8">Job categories organize positions by roles and responsibilities, aiding in streamlined recruitment and career development.</p>
-        <div className="flex justify-center items-center text-xl font-bold">
+        <p className="text-lg md:text-xl font-medium text-purple-400 mb-8 text-center">Job categories organize positions by roles and responsibilities, aiding in streamlined recruitment and career development.</p>
+        <div className="flex justify-center items-center text-[10px] md:text-xl  font-bold">
           <TabList>
           <Tab>All Jobs</Tab>
             <Tab>On site</Tab>
