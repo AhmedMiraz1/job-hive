@@ -1,6 +1,8 @@
 
 import Banner from "../componenets/Banner";
 import JobCategory from "../componenets/JobCategory";
+import JobGallery from "../componenets/JobGallery";
+
 
 
 const Home = () => {
@@ -11,6 +13,10 @@ const Home = () => {
            <div >
            <Banner/>
            <JobCategory />
+           </div>
+
+           <div>
+            <JobGallery/>
            </div>
         </div>
     );
