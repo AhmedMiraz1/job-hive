@@ -1,8 +1,14 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Job Hive 
 
-Currently, two official plugins are available:
+- https://job-hive-e1f9a.web.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Unique Job-Seeking Website: Built a one-of-a-kind job-seeking platform from scratch, offering users a seamless experience to search for, apply to, and manage job listings.
+
+- Responsive Design: Developed a fully responsive website ensuring optimal viewing experience across all devices, including desktops, tablets, and mobile phones.
+
+- Authentication and Authorization: Implemented robust authentication and authorization systems, allowing users to register, log in securely, and access personalized features such as adding jobs and viewing applied jobs.
+
+- Dynamic Content: Utilized React components and dynamic routing to create engaging content, including a home page with a banner section, categorized job listings, and interactive job details.
+
+- Database Integration: Integrated MongoDB to store job listings, user information, and application data, ensuring efficient data management and retrieval for seamless user interaction.
