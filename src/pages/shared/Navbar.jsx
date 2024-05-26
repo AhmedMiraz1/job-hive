@@ -82,6 +82,13 @@ const Navbar = () => {
                 : "text-lg"
             }>My Jobs</NavLink>
           </li>
+          <li>
+            <NavLink to='/blog' className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] text-lg  "
+                : "text-lg"
+            }>Blog</NavLink>
+          </li>
           </ul>
         </div>
         <div className='flex flex-row-reverse justify-center items-center  gap-0 md:gap-3 btn btn-ghost '>
@@ -125,6 +132,13 @@ const Navbar = () => {
                 ? "text-[#23BE0A] font-bold text-xl  "
                 : "font-bold text-xl"
             }>MyJobs</NavLink>
+          </li>
+          <li>
+            <NavLink to="/blog"   className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] font-bold text-xl  "
+                : "font-bold text-xl"
+            }>Blog</NavLink>
           </li>
          
            

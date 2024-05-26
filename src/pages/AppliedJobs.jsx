@@ -1,33 +1,40 @@
-import axios from "axios";
+
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import UseAxiosSecure from "../hooks/UseAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
 
 
 const AppliedJobs = () => {
    const {user}=useContext(AuthContext)
-    const [applyJobs, setApplyJobs]=useState([])
+
+   const {data :applyJobs =[], isLoading} = useQuery({
+    queryFn: ()=> getData(),
+    queryKey:['jobData']
+   })
+   
+    const axiosSecure = UseAxiosSecure()
     const [filter, setFilter] = useState('')
-    const [currentPage, setCurrentPage] = useState(1)
-    useEffect(() => {
-        getData()
-      }, [user])
+   
+  
     
       const getData = async () => {
-        const { data } = await axios(`${import.meta.env.VITE_API_URL}/jobData/${user?.email}`,{withCredentials:true})
-        setApplyJobs(data)
+        const { data } = await axiosSecure(`/jobData/${user?.email}`)
+    
+        return data
       }
 
-      console.log(applyJobs);
+     
       
-      
+      if(isLoading) return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-600"></div>
     return (
         <div className="mt-12">
           <div className="flex justify-center">
             <select
               onChange={e => {
                 setFilter(e.target.value)
-                setCurrentPage(1)
+                
               }}
               value={filter}
               name='category'
