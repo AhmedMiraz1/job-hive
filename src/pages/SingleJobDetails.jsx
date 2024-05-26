@@ -80,7 +80,7 @@ const SingleJobDetails = () => {
           Apply Job{" "}
         </button>
         {showModal && (
-          <div className="relative flex flex-col items-center max-w-lg gap-4 p-6 rounded-md shadow-md py-20 px-8  text-green-600 bg-purple-100 -top-96  -right-80  ">
+          <div className="relative flex flex-col items-center max-w-lg gap-4 p-2 lg:p-6 rounded-md shadow-md py-8 md:py-16 md:*:px-4 lg:py-20 px-2 lg:px-8  text-green-600 bg-purple-100 right-2 -top-44 md:-right-16 lg:-top-96  lg:-right-80  ">
             <button onClick={()=>setShowModal(false)} className="flex justify-end absolute top-10 right-10"><FaRectangleXmark  className="text-2xl"/></button>
             <form onSubmit={handelApply} className="space-y-6 flex flex-col items-center shadow-lg p-4">
             <div>
